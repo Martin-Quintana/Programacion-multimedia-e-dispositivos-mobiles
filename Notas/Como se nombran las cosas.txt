@@ -1,0 +1,20 @@
+Archivos XML-> siempre en minusculas y separado por guion. activity_main
+
+Clase en Java-> CamelCase: Todo junto y la primera letra de cada palabra en mayuscula.
+
+La carpeta de recursos se llama 'res' y dentro habra subcarpetas, nunca puede haber un archivo solo
+
+res
+	xml
+	fotos
+		png
+	files
+		txt
+
+	layout
+		xml
+			(Aqui no puede haber otra subcarpeta)
+
+
+layout-> Es el panel contenedor
+
