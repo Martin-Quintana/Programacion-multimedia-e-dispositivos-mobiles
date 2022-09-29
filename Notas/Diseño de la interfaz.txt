@@ -1,0 +1,21 @@
+tipos de paneles = layout
+
+	FrameLayout
+	LinearLayout
+	RelativeLayout
+	ConstraintLayout(grafica)
+	TableLayout
+	GridLayout
+		|Compose|
+				
+Unidades de medida->
+
+Atributo tipico de vistas es su tamaño 
+Respecto al tamaño y resolución de las pantallas es muy importante comprender cómo funcionan las unidades de medida.
+El tamaño de la pantalla es sun diagonal y se mide en pulgadas
+La resolucion se mide en pixels y es el numero de puntos reales que tiene la pantalla en horizontal y vertical.
+
+
+Densidad-> 
+	=>(ppp) Puntos por pulgada
+	=>(dpi) Dots per inch
