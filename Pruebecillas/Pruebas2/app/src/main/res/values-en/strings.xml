@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Measurement Units</string>
+    <string name="saludo">HELLO WORLD!!</string>
+    <string name="txt_btn1">BUTTON 1</string>
+    <string name="txt_btn2">BUTTON 2</string>
+    <string name="txt_btn3">BUTTON 3</string>
+    <string name="txt_btn4">BUTTON 4</string>
+    <string name="txt_btn5">BUTTON 5</string>
+</resources>
