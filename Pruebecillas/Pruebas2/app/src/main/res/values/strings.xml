@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Unidades de Medida</string>
-    <string name="saludo">Hola a todos</string>
-    <string name="txt_btn1">BOTON 1</string>
-    <string name="txt_btn2">BOTON 2</string>
-    <string name="txt_btn3">BOTON 3</string>
-    <string name="txt_btn4">BOTON 4</string>
-    <string name="txt_btn5">BOTON 5</string>
+    <string name="saludo">Hola mundo</string>
+    <string name="txt_btn1">BOTÓN 1</string>
+    <string name="txt_btn2">BOTÓN 2</string>
+    <string name="txt_btn3">BOTÓN 3</string>
+    <string name="txt_btn4">BOTÓN 4</string>
+    <string name="txt_btn5">BOTÓN 5</string>
 </resources>

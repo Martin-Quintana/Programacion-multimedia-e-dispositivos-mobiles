@@ -10,11 +10,12 @@
         android:layout_height="wrap_content"
         android:text="@string/saludo" />
     <!-- Botón Ajustado a contenido -->
+    <!-- Botón dimensionando en Pixels: ERROR -->
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/txt_btn1"/>
-    <!-- Botón dimensionando en Pixels: ERROR -->
+        android:text="@string/txt_btn1" />
+
     <Button
         android:layout_width="120px"
         android:layout_height="60px"
