@@ -4,11 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
+    <!-- Titulo del contenido -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/saludo" />
+        android:text="@string/saludo"
+        android:textSize="@dimen/txt_titulo"/>
     <!-- Botón Ajustado a contenido -->
     <Button
         android:layout_width="wrap_content"
@@ -18,21 +19,21 @@
     <Button
         android:layout_width="120px"
         android:layout_height="60px"
-        android:text="@string/txt_btn2"/>
+        android:text="@string/txt_btn2" />
     <!-- Botón dimensionado a dip=dp -->
     <Button
         android:layout_width="@dimen/btn_alto"
         android:layout_height="@dimen/btn_ancho"
-        android:text="@string/txt_btn3"/>
+        android:text="@string/txt_btn3" />
     <!-- Botón dimensionado al ancho -->
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/txt_btn4"/>
+        android:text="@string/txt_btn4" />
     <!-- Botón dimensionado a la altura del dispositivo -->
     <Button
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:text="@string/txt_btn5"/>
+        android:text="@string/txt_btn5" />
 
 </LinearLayout>

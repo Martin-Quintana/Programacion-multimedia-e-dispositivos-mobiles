@@ -2,4 +2,5 @@
 <resources>
     <dimen name="btn_ancho">150dp</dimen>
     <dimen name="btn_alto">80dp</dimen>
+    <dimen name="txt_titulo">40sp</dimen>
 </resources>
