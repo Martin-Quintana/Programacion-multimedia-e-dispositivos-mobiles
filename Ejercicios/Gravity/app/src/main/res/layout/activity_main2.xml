@@ -18,6 +18,7 @@
             android:layout_height="wrap_content"
             android:background="#0ff"
             android:text="Hello" />
+
         <TextView
             android:layout_width="120dp"
             android:layout_height="wrap_content"
@@ -36,18 +37,17 @@
         <TextView
             android:layout_width="120dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="top"
             android:background="#0ff"
-            android:text="Hello"
-            android:gravity="center_horizontal"
-            android:layout_gravity="top"/>
+            android:text="Hello" />
 
         <TextView
             android:layout_width="120dp"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
             android:background="#fff"
-            android:text="Bye bye"
-            android:gravity="right"
-            android:layout_gravity="bottom"/>
+            android:gravity="end|center_vertical"
+            android:text="Bye bye" />
     </LinearLayout>
 
 </LinearLayout>
