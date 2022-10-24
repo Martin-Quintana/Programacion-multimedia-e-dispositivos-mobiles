@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Utilizas Explorer?</string>
+    <string name="btn_si">Si</string>
+    <string name="btn_no">No</string>
+    <string name="btn_aveces">A veces</string>
+</resources>
