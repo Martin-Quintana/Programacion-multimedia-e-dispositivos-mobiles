@@ -4,4 +4,7 @@
     <string name="btn_afirmativo">Si</string>
     <string name="btn_negativo">No</string>
     <string name="btn_duda">Tal vez</string>
+    <string name="Si">Solo sin Pinha</string>
+    <string name="No">Pues eres frances</string>
+    <string name="Tal_Vez">Decidete ya</string>
 </resources>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Navegador_LinearLayout</string>
+    <string name="question">You use IExplorer?</string>
+    <string name="btn_yes">Yes</string>
+    <string name="btn_no">No</string>
+    <string name="btn_maybe">Maybe</string>
+</resources>

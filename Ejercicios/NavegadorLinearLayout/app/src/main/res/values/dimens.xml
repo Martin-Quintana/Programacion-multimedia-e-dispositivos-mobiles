@@ -3,4 +3,5 @@
     <dimen name="margin">10dp</dimen>
     <dimen name="width">100dp</dimen>
     <dimen name="height">50dp</dimen>
+    <dimen name="txtSize">15pt</dimen>
 </resources>

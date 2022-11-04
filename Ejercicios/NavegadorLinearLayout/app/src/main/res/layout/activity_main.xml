@@ -13,12 +13,12 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
             android:background="@color/teal_200"
             android:text="@string/txt_Pregunta"
-            android:textSize="15pt"/>
+            android:textSize="@dimen/txtSize"/>
     </LinearLayout>
 
     <LinearLayout
@@ -32,21 +32,35 @@
             android:layout_height="@dimen/height"
             android:layout_gravity="center"
             android:layout_margin="@dimen/margin"
-            android:text="@string/btn_afirmativo" />
+            android:text="@string/btn_afirmativo"
+            android:onClick="onClickBtnSi"/>
 
         <Button
+            android:id="@+id/btnNo"
             android:layout_width="@dimen/width"
             android:layout_height="@dimen/height"
             android:layout_gravity="center"
             android:layout_margin="@dimen/margin"
-            android:text="@string/btn_negativo" />
+            android:text="@string/btn_negativo"
+            android:onClick="onClickBtn"/>
 
         <Button
+            android:id="@+id/btnTalVez"
             android:layout_width="@dimen/width"
             android:layout_height="@dimen/height"
             android:layout_gravity="center"
             android:layout_margin="@dimen/margin"
-            android:text="@string/btn_duda" />
+            android:text="@string/btn_duda"
+            android:onClick="onClickBtn"/>
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/TextViewRespuesta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="@color/teal_200"
+        android:textSize="@dimen/txtSize"/>
 
 </LinearLayout>

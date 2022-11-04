@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Login</string>
+    <string name="conectar">Conectar</string>
+    <string name="contrasenha">Contrasenha</string>
+    <string name="iniciar_sesion">Iniciar Sesion</string>
+    <string name="olvidaste_tu_contrasenha">Olvidaste tu contrasenha?</string>
+    <string name="nombre">Nombre</string>
+</resources>
