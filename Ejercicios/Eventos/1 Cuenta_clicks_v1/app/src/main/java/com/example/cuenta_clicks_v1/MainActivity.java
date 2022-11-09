@@ -36,10 +36,4 @@ public class MainActivity extends AppCompatActivity {
         contador = 0;
         textView.setText("Has pulsado " + contador + " veces");
     }
-
-    private class Aux implements View.OnClickListener {
-        @Override
-
-    }
-
 }
