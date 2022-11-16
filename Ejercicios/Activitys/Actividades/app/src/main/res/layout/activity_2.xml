@@ -12,6 +12,4 @@
         android:layout_height="wrap_content"
         android:text="Estamos en ACTIVITY 2"/>
 
-
-
 </LinearLayout>
