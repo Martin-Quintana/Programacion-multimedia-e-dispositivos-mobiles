@@ -5,12 +5,20 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="#8900DC">
+    android:background="#FF0000">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Estamos en ACTIVITY 2"/>
+        android:text="Estamos en ACTIVITY 3"/>
+
+    <!-- TEXTO DONDE VISUALIZO LOS DATOS RECIBIDOS -->
+    <TextView
+        android:id="@+id/txtDatosRecibidos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="23sp"
+        android:textStyle="bold"/>
 
 
 

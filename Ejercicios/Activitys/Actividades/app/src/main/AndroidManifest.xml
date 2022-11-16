@@ -13,6 +13,20 @@
         android:theme="@style/Theme.Actividades"
         tools:targetApi="31">
         <activity
+            android:name=".Activity4"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Activity3"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity> <!-- Instanciacion de la Activity2 en el manifest -->
+        <activity
             android:name=".Activity2"
             android:exported="false">
             <meta-data
