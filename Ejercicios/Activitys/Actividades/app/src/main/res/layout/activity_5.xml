@@ -14,12 +14,16 @@
 
     <!-- =============================================
          TEXTO DONDE VISUALIZO LOS DATOS RECIBIDOS
-         DESDE UN BUNDLE
          ============================================= -->
     <TextView
-        android:id="@+id/txtDatosRecibidos"
+        android:id="@+id/txtDatosRecibidos2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="23sp"
         android:textStyle="bold"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Finalizar"
+        android:onClick="onClickBtnFinalizar"/>
 </LinearLayout>

@@ -19,7 +19,7 @@ public class Activity4 extends AppCompatActivity {
         //Extraer los datos del paquete
         String strDatosRecibidos = bundle.getString("mensaje_en_bundle");
         //Mostrar el dato en la TextView reservada para ello
-        TextView txtRecibido = findViewById(R.id.txtDatosRecibidos);
+        TextView txtRecibido = findViewById(R.id.txtDatosRecibidosBundle);
         txtRecibido.setText(strDatosRecibidos);
 
     }//fin onCreate()

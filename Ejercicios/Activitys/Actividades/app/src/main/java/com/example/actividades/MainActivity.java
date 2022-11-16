@@ -9,6 +9,8 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final int CODIGO_LLAMADA_CON_RESPUESTA = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,6 +82,14 @@ public class MainActivity extends AppCompatActivity {
                 //cargo el paquete en el intent
                 intent.putExtras(bundle);
                 startActivity(intent);
+                break;
+            }
+            case R.id.btnLlamadaActivity5: {
+                strDatoEnviar = "ACT 1 llama a la ACT 5 esperando respuesta";
+                Intent intent = new Intent(this, Activity5.class);//El this significa en el propio lugar donde esta
+                intent.putExtra("mensaje_con_respuesta", strDatoEnviar);//Los datos van enviados con clave y valor, (clave = [mensaje_con_respuesta], valor = [strDatoEnviar])
+                //llamada esperando respuesta
+                startActivityForResult(intent, CODIGO_LLAMADA_CON_RESPUESTA); //Es Depreacated por eso esta tachado
                 break;
             }
         }
