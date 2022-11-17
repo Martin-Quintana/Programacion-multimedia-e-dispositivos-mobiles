@@ -12,8 +12,9 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final int CODIGO_LLAMADA_CON_RESPUESTA = 1;
+    private static final int CODIGO_LLAMADA_CON_RESPUESTA_A5 = 1;
 
+    private static final int CODIGO_LLAMADA_CON_RESPUESTA_A6 = 2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,7 +93,12 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(this, Activity5.class);//El this significa en el propio lugar donde esta
                 intent.putExtra("mensaje_con_respuesta", strDatoEnviar);//Los datos van enviados con clave y valor, (clave = [mensaje_con_respuesta], valor = [strDatoEnviar])
                 //llamada esperando respuesta
-                startActivityForResult(intent, CODIGO_LLAMADA_CON_RESPUESTA); //Es Depreacated por eso esta tachado
+                startActivityForResult(intent, CODIGO_LLAMADA_CON_RESPUESTA_A5); //Es Depreacated por eso esta tachado
+                break;
+            }
+            case R.id.btnLlamadaActivity6: {
+                Intent intent = new Intent(this, Activity6.class);
+                startActivityForResult(intent, CODIGO_LLAMADA_CON_RESPUESTA_A6);
                 break;
             }
         }
@@ -101,14 +107,23 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == CODIGO_LLAMADA_CON_RESPUESTA) { // Respuesta de la Activity 5
+        //Saber en que momento del ciclo de vida se ejecuta esta callback
+        Log.i("ciclo","Ejecutando onActivityResult() de MainActivity");//Mensaje de log
+
+        TextView txtMensajeRecibido = findViewById(R.id.txtRespuestaRecibida);
+        if(requestCode == CODIGO_LLAMADA_CON_RESPUESTA_A5) { // Respuesta de la Activity 5
             if(resultCode == RESULT_OK) { //Finalizado con la pulsacion del Boton
                 String strDevuelto = data.getStringExtra("mensaje_devuelto");
-                TextView txtMensajeRecibido = findViewById(R.id.txtRespuestaRecibida);
                 txtMensajeRecibido.setText(strDevuelto);
             } else { // No hemos recibido el OK
-                Toast.makeText(this, "NO SE QUE HA PASADO.....", Toast.LENGTH_SHORT).show();
+                txtMensajeRecibido.setText("EL USUARIO ABANDONO LA APP DESDE LA ACT5");
+            }
+        } else if (requestCode == CODIGO_LLAMADA_CON_RESPUESTA_A6){ // Respuesta de la Activity 6
+            if(resultCode == RESULT_OK) { //Finalizado con la pulsacion del Boton
+                txtMensajeRecibido.setText("NO ME HAN ENVIADO NADA PERO HAN FINALIZADO CON EL BOTON DE FIN");
+            } else { // No hemos recibido el OK
+                txtMensajeRecibido.setText("EL USUARIO ABANDONO LA APP DESDE LA ACT6");
             }
         }
-    }
+    } //Finalida onActivityResult
 }
