@@ -24,7 +24,11 @@ public class Activity5 extends AppCompatActivity {
 
     public void onClickBtnFinalizar(View view) {
         String datoRespuesta = "La actividad 5 responde HOLA a la actividad 1";
-
-
+        Intent intent = new Intent();
+        Bundle bundle = new Bundle();
+        bundle.putString("mensaje_devuelto", datoRespuesta);
+        intent.putExtras(bundle);
+        setResult(RESULT_OK, intent);
+        finish();
     }
 }

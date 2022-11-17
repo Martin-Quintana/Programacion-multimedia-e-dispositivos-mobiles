@@ -40,4 +40,11 @@
         android:text="Llamada activity 5 + respuesta"
         android:onClick="onClickBtn"/>
 
+    <TextView
+        android:id="@+id/txtRespuestaRecibida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="23sp"
+        android:textStyle="bold"/>
+
 </LinearLayout>

@@ -1,11 +1,14 @@
 package com.example.actividades;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -91,6 +94,20 @@ public class MainActivity extends AppCompatActivity {
                 //llamada esperando respuesta
                 startActivityForResult(intent, CODIGO_LLAMADA_CON_RESPUESTA); //Es Depreacated por eso esta tachado
                 break;
+            }
+        }
+    }//Finalizacion del listener de los botones
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == CODIGO_LLAMADA_CON_RESPUESTA) { // Respuesta de la Activity 5
+            if(resultCode == RESULT_OK) { //Finalizado con la pulsacion del Boton
+                String strDevuelto = data.getStringExtra("mensaje_devuelto");
+                TextView txtMensajeRecibido = findViewById(R.id.txtRespuestaRecibida);
+                txtMensajeRecibido.setText(strDevuelto);
+            } else { // No hemos recibido el OK
+                Toast.makeText(this, "NO SE QUE HA PASADO.....", Toast.LENGTH_SHORT).show();
             }
         }
     }
