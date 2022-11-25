@@ -37,7 +37,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="onClickBtn"
-        android:text="Llamada directa" />
+        android:text="Llamada Directa" />
+
+    <Button
+        android:id="@+id/btnLlamadaDirecta2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickBtn"
+        android:text="Llamada Directa librerias compatibilidad" />
+
+    <Button
+        android:id="@+id/btnMostrarMapa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickBtn"
+        android:text="Mostrar Mapa" />
     <Button
         android:id="@+id/btnAbrirNavegador"
         android:layout_width="wrap_content"
