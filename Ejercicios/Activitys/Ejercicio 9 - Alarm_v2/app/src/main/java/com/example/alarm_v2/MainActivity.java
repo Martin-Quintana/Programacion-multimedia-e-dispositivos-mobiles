@@ -1,4 +1,4 @@
-package com.example.fecha_hora;
+package com.example.alarm_v2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         datePicker = findViewById(R.id.dpFecha);
     }//Fin de onCreate()
 
-        // Inicio del onClickBtn()
+    // Inicio del onClickBtn()
     public void onClickBtn(View view) {
         //Con el date picker cogemos el dia mes y anho
         int dia = datePicker.getDayOfMonth();
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Introducimos una toast
         Toast.makeText(this, dia + "/" + (mes + 1) + "/" + ano
-               + "\n" + hora + ":" + minuto, Toast.LENGTH_SHORT).show();
+                + "\n" + hora + ":" + minuto, Toast.LENGTH_SHORT).show();
     }
 }
 
