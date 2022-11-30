@@ -4,12 +4,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@color/teal_200">
+    android:background="@color/teal_200"
+    android:padding="16dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ESTO ES MI VISOR WEB"
+        android:text="ESTO ES MI VISOR WEB EXPLICITO"
         android:textColor="@color/purple_500"
         android:textStyle="bold"
         android:textSize="18dp"

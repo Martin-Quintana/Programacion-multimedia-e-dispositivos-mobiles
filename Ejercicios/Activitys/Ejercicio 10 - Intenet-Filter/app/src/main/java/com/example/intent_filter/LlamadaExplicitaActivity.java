@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 public class LlamadaExplicitaActivity extends AppCompatActivity {
@@ -17,6 +18,9 @@ public class LlamadaExplicitaActivity extends AppCompatActivity {
         webView = findViewById(R.id.webViewExplicita);
         Intent intent = getIntent();
         String urlRecibida = intent.getStringExtra("string_url");
+        //Habilitamos JavaScript pues de lo contrario, muchas web cargaran mal
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
         //clase WebView -- metodo loadUrl(string)
         webView.loadUrl(urlRecibida);
 

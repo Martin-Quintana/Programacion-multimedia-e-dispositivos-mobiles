@@ -3,25 +3,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="#DAAB03"
+    android:padding="16dp">
 
-    <EditText
-        android:id="@+id/etURL"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Escribe tu URL" />
-    <Button
-        android:id="@+id/btnLlamadaExplicita"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="VER WEB LLAMADA EXPLICITA"
-        android:onClick="btnVerWeb"/>
-    <Button
-        android:id="@+id/btnLlamadaImplicita"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="VER WEB LLAMADA IMPLICITA"
-        android:onClick="btnVerWeb"/>
+        android:text="ESTO ES MI VISOR WEB IMPLICITO"
+        android:textColor="@color/purple_500"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:layout_margin="16dp"/>
+
+
+    <WebView
+        android:id="@+id/webViewImplicita"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 
 
