@@ -13,15 +13,20 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView textView;
     //Atributo contador para que cuente la cantidad de veces que se pulse el boton
-    private int contador = 0;
-
+    private int contador;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         //asociar mi objeto java con la view declarada en el codigo XML de layout
         textView = findViewById(R.id.contador);
+
+        if (savedInstanceState != null){
+            contador = savedInstanceState.getInt("contador");
+            textView.setText("Has pulsado " + contador + " veces");
+        } else {
+            contador = 0;
+        }
         Log.i("ciclo","Ejecutando onCreate()");//Mensaje de log
     } //end onCreate
 
@@ -37,20 +42,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putInt("contador", contador);
-        Log.i("ciclo","Ejecutando onSaveInstanceState()");//Mensaje de log
+        Log.i("ciclo","Ejecutando onSaveInstanceState() - Contador: " + contador);//Mensaje de log
     }
 
+    /*
     //Forma 1:
     //METODO DE RECUPERACION
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         contador = savedInstanceState.getInt("contador");
-        Log.i("ciclo","Ejecutando onRestoreInstanceState()");//Mensaje de log
+        Log.i("ciclo","Ejecutando onRestoreInstanceState()- Contador: " + contador);//Mensaje de log
+        textView.setText("Has pulsado " + contador + " veces");
     }
-
-    //Forma 2:
-    //
+    /*
 
 
     //Metodos del Ciclo de vida
