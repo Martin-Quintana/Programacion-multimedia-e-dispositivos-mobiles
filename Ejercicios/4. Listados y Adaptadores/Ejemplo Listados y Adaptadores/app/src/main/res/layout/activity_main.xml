@@ -29,6 +29,12 @@
         android:layout_height="wrap_content"
         android:onClick="onClickBtn"
         android:text="Spinner con adaptador"/>
+    <Button
+        android:id="@+id/btnSpinnerConRecurso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickBtn"
+        android:text="Spinner con adaptador"/>
 
 
 
