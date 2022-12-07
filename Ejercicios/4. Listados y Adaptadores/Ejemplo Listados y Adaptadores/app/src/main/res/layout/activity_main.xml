@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/teal_200"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LISTADOES" />
+
+    <Button
+        android:id="@+id/btnSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickBtn"
+        android:text="Spinner" />
+    <Button
+        android:id="@+id/btnSpinnerListenner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickBtn"
+        android:text="Spinner con Listenner"/>
+    <Button
+        android:id="@+id/btnSpinnerConAdaptador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickBtn"
+        android:text="Spinner con adaptador"/>
+
+
+
+
+
+
+</LinearLayout>
