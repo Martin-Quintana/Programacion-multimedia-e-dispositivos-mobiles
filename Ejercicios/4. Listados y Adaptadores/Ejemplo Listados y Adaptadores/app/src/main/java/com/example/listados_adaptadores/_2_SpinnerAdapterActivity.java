@@ -31,7 +31,7 @@ public class _2_SpinnerAdapterActivity extends AppCompatActivity {
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,
                                                                     android.R.layout.simple_spinner_item,
                                                                     arrayPlanetas);
-                                                                    *
+
          */
         //Lo pone como si no tuviera adaptador
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,

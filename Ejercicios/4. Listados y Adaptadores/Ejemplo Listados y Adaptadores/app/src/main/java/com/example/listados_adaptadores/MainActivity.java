@@ -37,6 +37,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             }
+            case  R.id.btnSpinnerDinamico: {
+                Intent intent = new Intent(this, _4_SpinnerDinamicoActivity.class);
+                startActivity(intent);
+                break;
+            }
 
 
         }
