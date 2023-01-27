@@ -1,4 +1,4 @@
-package com.example.listados_adaptadores;
+package com.example.listadosadaptadores;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,9 +14,9 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class _5_ListViewActivity extends AppCompatActivity {
+public class _8_ListViewDinamica extends AppCompatActivity {
 
-    //Estructura dinamica
+    // Estructura Dinamica
     private ArrayList<String> alPlanetas;
     private ArrayAdapter adaptador;
     private ListView lvPlanetas;
@@ -26,57 +26,54 @@ public class _5_ListViewActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_5_list_view);
+        setContentView(R.layout.activity_8_list_view_dinamica);
 
-        //Inicalizar
+        // Iniciador
+        lvPlanetas = findViewById(R.id.lvPlanetas);
         etPlanetas = findViewById(R.id.etPlaneta);
-        lvPlanetas = findViewById(R.id.lvPlanetas1);
         btnAdd = findViewById(R.id.btnAdd);
         alPlanetas = new ArrayList<>();
-        adaptador = new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, alPlanetas);
+        adaptador = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, alPlanetas);
         lvPlanetas.setAdapter(adaptador);
 
-        //listener
-
+        // Listener
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //testear valor
                 if (etPlanetas.getText().toString().isEmpty()) {
                     //todo
                 } else {
-                    //insertar
+                    // Insertar
                     alPlanetas.add(etPlanetas.getText().toString());
-                    //refrescamos el adaptador
+
+                    // Refrescar el adaptador
                     adaptador.notifyDataSetChanged();
-                    //visualizar el spinner UNA SOLA VEZ
+
+                    // Visualizar ListView
                     if (lvPlanetas.getVisibility() != View.VISIBLE) {
                         lvPlanetas.setVisibility(View.VISIBLE);
                     }
-                    //limpiar el et
+
+                    // Limpiar el et
                     etPlanetas.setText("");
                 }
             }
         });
 
+        // Listenner de la vista tipo boton
         lvPlanetas.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String strPlaneta = lvPlanetas.getSelectedItem().toString();
-                String strPlaneta_v2 = adapterView.getItemAtPosition(i).toString();
-                Toast.makeText(_5_ListViewActivity.this,
-                        "\n Planeta desde Spinner: " + strPlaneta
-                                + "\n Planeta seleccionado desde adaptador: " + strPlaneta_v2
-                        , Toast.LENGTH_SHORT).show();
-
+                String strPlaneta2 = adapterView.getItemAtPosition(i).toString();
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-                //No es necesario
+                // No es necesario
             }
         });
 
-
     }
+
 }

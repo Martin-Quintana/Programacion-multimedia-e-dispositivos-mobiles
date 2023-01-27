@@ -2,28 +2,33 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center">
+    android:background="@color/teal_200"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="List View dinamico real"
-        android:textStyle="bold"/>
+        android:layout_margin="10dp"
+        android:text="ListView Dinamica" />
+
     <EditText
         android:id="@+id/etPlaneta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Anhadir"/>
+        android:hint="Planeta"
+        android:inputType="textCapWords" />
+
     <Button
         android:id="@+id/btnAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Anhadir"
-        android:onClick="onClickBtn"/>
-    <ListView
-        android:id="@+id/lvPlanetas1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:text="Anhadir" />
 
+    <ListView
+        android:id="@+id/lvPlanetas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
 
 </LinearLayout>

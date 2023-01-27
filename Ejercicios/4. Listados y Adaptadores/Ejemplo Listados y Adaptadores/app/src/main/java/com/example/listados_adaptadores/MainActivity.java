@@ -42,6 +42,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             }
+            case  R.id.btnListView: {
+                Intent intent = new Intent(this, _5_ListViewActivity.class);
+                startActivity(intent);
+                break;
+            }
+            case  R.id.btnLisViewAdapter: {
+                Intent intent = new Intent(this, _6_ListViewAdapter.class);
+                startActivity(intent);
+                break;
+            }
 
 
         }

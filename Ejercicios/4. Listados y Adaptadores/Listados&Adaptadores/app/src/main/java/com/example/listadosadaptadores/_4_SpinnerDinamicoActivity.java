@@ -1,4 +1,4 @@
-package com.example.listados_adaptadores;
+package com.example.listadosadaptadores;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,75 +8,75 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class _5_ListViewActivity extends AppCompatActivity {
+public class _4_SpinnerDinamicoActivity extends AppCompatActivity {
 
-    //Estructura dinamica
+    // Estructura Dinamica
     private ArrayList<String> alPlanetas;
     private ArrayAdapter adaptador;
-    private ListView lvPlanetas;
+    private Spinner spPlanetas;
     private EditText etPlanetas;
     private Button btnAdd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_5_list_view);
+        setContentView(R.layout.activity_4_spinner_dinamico);
 
-        //Inicalizar
+        // Iniciador
+        spPlanetas = findViewById(R.id.spPlanetasDinamicoReal);
         etPlanetas = findViewById(R.id.etPlaneta);
-        lvPlanetas = findViewById(R.id.lvPlanetas1);
         btnAdd = findViewById(R.id.btnAdd);
         alPlanetas = new ArrayList<>();
-        adaptador = new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, alPlanetas);
-        lvPlanetas.setAdapter(adaptador);
+        adaptador = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, alPlanetas);
+        spPlanetas.setAdapter(adaptador);
 
-        //listener
-
+        // Listener
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //testear valor
                 if (etPlanetas.getText().toString().isEmpty()) {
                     //todo
                 } else {
-                    //insertar
+                    // Insertar
                     alPlanetas.add(etPlanetas.getText().toString());
-                    //refrescamos el adaptador
+
+                    // Refrescar el adaptador
                     adaptador.notifyDataSetChanged();
-                    //visualizar el spinner UNA SOLA VEZ
-                    if (lvPlanetas.getVisibility() != View.VISIBLE) {
-                        lvPlanetas.setVisibility(View.VISIBLE);
+
+                    // Visualizar el Spinner UNA SOLA VEZ
+                    if (spPlanetas.getVisibility() != View.VISIBLE) {
+                        spPlanetas.setVisibility(View.VISIBLE);
                     }
-                    //limpiar el et
+
+                    // Limpiar el et
                     etPlanetas.setText("");
                 }
             }
         });
 
-        lvPlanetas.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        // Listenner de la vista tipo boton
+        spPlanetas.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                String strPlaneta = lvPlanetas.getSelectedItem().toString();
-                String strPlaneta_v2 = adapterView.getItemAtPosition(i).toString();
-                Toast.makeText(_5_ListViewActivity.this,
-                        "\n Planeta desde Spinner: " + strPlaneta
-                                + "\n Planeta seleccionado desde adaptador: " + strPlaneta_v2
-                        , Toast.LENGTH_SHORT).show();
+                String strPlaneta = spPlanetas.getSelectedItem().toString();
+                String strPlaneta2 = adapterView.getItemAtPosition(i).toString();
 
+                Toast.makeText(_4_SpinnerDinamicoActivity.this, "Planeta seleccionado: " + strPlaneta
+                                +"\nPlaneta seleccionado desde adapter: " + strPlaneta2,
+                        Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-                //No es necesario
+                // No es necesario
             }
         });
 
-
     }
+
 }

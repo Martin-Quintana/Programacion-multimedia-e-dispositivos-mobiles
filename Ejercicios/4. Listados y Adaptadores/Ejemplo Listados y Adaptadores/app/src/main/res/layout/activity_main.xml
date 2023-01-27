@@ -41,6 +41,18 @@
         android:layout_height="wrap_content"
         android:onClick="onClickBtn"
         android:text="Spinner dinamico"/>
+    <Button
+        android:id="@+id/btnListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickBtn"
+        android:text="List View con Entries"/>
+    <Button
+        android:id="@+id/btnLisViewAdapter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickBtn"
+        android:text="List View con adaptador"/>
 
 
 

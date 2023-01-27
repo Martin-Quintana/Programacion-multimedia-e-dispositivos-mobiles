@@ -1,0 +1,18 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/imgPlaneta"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_margin="6dp">
+    </ImageView>
+
+    <TextView
+        android:id="@+id/tvPlaneta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="21sp"
+        android:textStyle="bold">
+    </TextView>
+</LinearLayout>
