@@ -23,9 +23,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         tvHello = findViewById(R.id.tvHello);
         registerForContextMenu(tvHello);
-    } //Fin onCreate(){}
+    }//Fin onCreate(){}
 
 
+
+    //Click largo para verlo
     //Para que llamar y hacer el menu contextual
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
@@ -45,6 +47,25 @@ public class MainActivity extends AppCompatActivity {
         //return super.onCreateOptionsMenu(menu);
         return true;
     }
+
+    //metodo (evento) lanzado por el sistema cuando se pulsa un item del menu contextual
+
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.ctx_item1: {
+                Toast.makeText(this, "Pulsado " + item.getTitle(), Toast.LENGTH_SHORT).show();
+                return true;
+            }
+            case R.id.ctx_item2: {
+                Toast.makeText(this, "Pulsado " + item.getTitle(), Toast.LENGTH_SHORT).show();
+                return true;
+            }
+            default:
+                return super.onContextItemSelected(item);//En los swich ponemos un return default
+        }
+    }
+
 
     //metodo (evento) lanzado por el sistema cuando se pulsa un item del menu de opciones
 
