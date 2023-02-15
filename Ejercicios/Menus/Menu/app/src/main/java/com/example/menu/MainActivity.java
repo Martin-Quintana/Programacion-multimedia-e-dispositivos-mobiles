@@ -4,6 +4,7 @@ import androidx.annotation.MenuRes;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.Menu;
@@ -31,6 +32,12 @@ public class MainActivity extends AppCompatActivity {
         ivHoja = findViewById(R.id.ivHoja);
         registerForContextMenu(ivHoja);
     }//Fin onCreate(){}
+
+    public void onClickBtn(View view) {
+        Intent intent = new Intent(this, MainActivity2.class);
+        startActivity(intent);
+    }//Fin onClickBtn(){}
+
 
 
 
@@ -101,4 +108,6 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     } //Fin onOptionsItemSelected(){}
+
+
 }
