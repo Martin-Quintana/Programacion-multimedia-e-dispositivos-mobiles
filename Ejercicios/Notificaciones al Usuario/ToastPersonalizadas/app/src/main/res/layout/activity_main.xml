@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btnToastDefectiva"
+        android:text="Toast defectiva"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickBtn"/>
+    <Button
+        android:id="@+id/btnToastGravity"
+        android:text="Toast en otra posición"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickBtn"/>
+    <Button
+        android:id="@+id/btnToastPersonalizada"
+        android:text="Toast personalizada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickBtn"/>
+</LinearLayout>
