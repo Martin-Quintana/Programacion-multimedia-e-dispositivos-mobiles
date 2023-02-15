@@ -13,16 +13,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class AuxiliarActivity extends AppCompatActivity {
+public abstract class AuxiliarActivity extends AppCompatActivity {
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_auxiliar);
-
-    }//Fin onCreate(){}
-    
 
     //Este es el metodo que se utiliza para llamar al Menu
     @Override
