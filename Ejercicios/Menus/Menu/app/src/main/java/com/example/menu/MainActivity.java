@@ -10,19 +10,26 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     TextView tvHello;
+    ImageView ivHoja;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //Para el menu de contextual 2
         tvHello = findViewById(R.id.tvHello);
         registerForContextMenu(tvHello);
+
+        //Para el menu contextual
+        ivHoja = findViewById(R.id.ivHoja);
+        registerForContextMenu(ivHoja);
     }//Fin onCreate(){}
 
 
@@ -33,7 +40,11 @@ public class MainActivity extends AppCompatActivity {
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.contextual_options_menu, menu);
+        if (v.getId() == R.id.ivHoja) {
+            inflater.inflate(R.menu.contextual_options_menu, menu);
+        } else if (v.getId() == R.id.tvHello) {
+            inflater.inflate(R.menu.contextual_options_menu_2, menu);
+        }
     }
 
     //Este es el metodo que se utiliza para llamar al Menu
@@ -46,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         //Se cambia potque realmente es una respuesta negativa o positiva
         //return super.onCreateOptionsMenu(menu);
         return true;
-    }
+    }   //Fin onCreateOptionsMenu(){}
 
     //metodo (evento) lanzado por el sistema cuando se pulsa un item del menu contextual
 
@@ -64,7 +75,9 @@ public class MainActivity extends AppCompatActivity {
             default:
                 return super.onContextItemSelected(item);//En los swich ponemos un return default
         }
-    }
+    }  //Fin onContextItemSelected(){}
+
+
 
 
     //metodo (evento) lanzado por el sistema cuando se pulsa un item del menu de opciones
@@ -87,5 +100,5 @@ public class MainActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
+    } //Fin onOptionsItemSelected(){}
 }
