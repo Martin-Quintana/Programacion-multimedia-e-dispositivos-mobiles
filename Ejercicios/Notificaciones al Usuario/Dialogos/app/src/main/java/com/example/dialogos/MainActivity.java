@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int DIALOGO_1_BTN = 1;
     private static final int DIALOGO_2_BTN = 2;
     private static final int DIALOGO_3_BTN = 3;
+    private static final int DIALOGO_LISTA_DE_SELECCION = 4;
 
     //Declaraciones para el segundo procedimiento
     private AlertDialog.Builder ventana; //ventana de dialogo
@@ -154,6 +155,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn7:
                 showDialog(DIALOGO_3_BTN); //llama a onCreateDialog(3
                 break;
+            case R.id.btn8:
+                showDialog(DIALOGO_LISTA_DE_SELECCION); //llama a onCreateDialog(4);
+                break;
 
         }//end switch
     }// end onClickBtnBis
@@ -235,8 +239,23 @@ public class MainActivity extends AppCompatActivity {
                 }); //boton del dialogo
                 //ventana.show(); //muestra el dialogo
                 break;
+
+            case DIALOGO_LISTA_DE_SELECCION:
+                String[] colores = getResources().getStringArray(R.array.colores);
+                ventana.setTitle("Lista de Valores"); //titulo del dialogo
+                ventana.setItems(colores, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //todo codigo a ejecutar cuando se pulse el boton
+                        //codigo a ejecutar cuando se pulse el boton
+
+                        Toast.makeText(MainActivity.this,"Opcion elegida " + colores[which], Toast.LENGTH_SHORT).show();
+                    }
+                }); //boton del dialogo
+                //ventana.show(); //muestra el dialogo
+                break;
         }//end switch
-        return ventana.create();
+        return ventana.create(); //devuelve el dialogo
     }//end onCreateDialog
 
 

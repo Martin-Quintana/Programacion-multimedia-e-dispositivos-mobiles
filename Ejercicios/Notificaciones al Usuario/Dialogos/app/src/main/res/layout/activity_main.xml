@@ -85,6 +85,13 @@
             android:onClick="onClickBtnBis"
             android:text="3 botones" />
 
+        <Button
+            android:id="@+id/btn8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClickBtnBis"
+            android:text="Lista de seleccion" />
+
 
 
 
