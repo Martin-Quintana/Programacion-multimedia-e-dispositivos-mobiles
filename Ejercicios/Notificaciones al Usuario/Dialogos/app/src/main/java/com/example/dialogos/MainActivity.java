@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,10 +25,10 @@ public class MainActivity extends AppCompatActivity {
                 dialogo_con_1_boton();
                 break;
             case R.id.btn2:
-                //dialogo_con_2_botones();
+                dialogo_con_2_botones();
                 break;
             case R.id.btn3:
-                //dialogo_con_3_botones();
+                dialogo_con_3_botones();
                 break;
         }//end switch
     }// end onClickBtn
@@ -48,11 +49,80 @@ public class MainActivity extends AppCompatActivity {
         ventana.setTitle("Atencion"); //titulo del dialogo
         ventana.setIcon(android.R.drawable.ic_dialog_alert); //icono del dialogo
         ventana.setMessage("Concede aviso"); //mensaje del dialogo
+        //inhabillitar la posibilidad de cerrar el dialogo pulsando fuera de el
+        ventana.setCancelable(false);
         ventana.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 //todo codigo a ejecutar cuando se pulse el boton
                 //codigo a ejecutar cuando se pulse el boton
+                dialog.cancel(); //cierra el dialogo
+            }
+        }); //boton del dialogo
+        ventana.show(); //muestra el dialogo
+    }
+
+    //metodo para crear un dialogo con dos botones
+    private void dialogo_con_2_botones() {
+        AlertDialog.Builder ventana = new AlertDialog.Builder(this); //this es el contexto
+        ventana.setTitle("Atencion"); //titulo del dialogo
+        ventana.setIcon(android.R.drawable.ic_dialog_alert); //icono del dialogo
+        ventana.setMessage("Concede aviso"); //mensaje del dialogo
+        //inhabillitar la posibilidad de cerrar el dialogo pulsando fuera de el
+        ventana.setCancelable(false);
+        ventana.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //todo codigo a ejecutar cuando se pulse el boton
+                //codigo a ejecutar cuando se pulse el boton
+                Toast.makeText(MainActivity.this, "Aceptar", Toast.LENGTH_SHORT).show();
+                dialog.cancel(); //cierra el dialogo
+            }
+        }); //boton del dialogo
+        ventana.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //todo codigo a ejecutar cuando se pulse el boton
+                //codigo a ejecutar cuando se pulse el boton
+                Toast.makeText(MainActivity.this, "Cancelar", Toast.LENGTH_SHORT).show();
+                dialog.cancel(); //cierra el dialogo
+            }
+        }); //boton del dialogo
+        ventana.show(); //muestra el dialogo
+    }
+
+    //metodo para crear un dialogo con tres botones
+    private void dialogo_con_3_botones() {
+        AlertDialog.Builder ventana = new AlertDialog.Builder(this); //this es el contexto
+        ventana.setTitle("Atencion"); //titulo del dialogo
+        ventana.setIcon(android.R.drawable.ic_dialog_alert); //icono del dialogo
+        ventana.setMessage("Concede aviso"); //mensaje del dialogo
+        //inhabillitar la posibilidad de cerrar el dialogo pulsando fuera de el
+        ventana.setCancelable(false);
+        ventana.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //todo codigo a ejecutar cuando se pulse el boton
+                //codigo a ejecutar cuando se pulse el boton
+                Toast.makeText(MainActivity.this, "Aceptar", Toast.LENGTH_SHORT).show();
+                dialog.cancel(); //cierra el dialogo
+            }
+        }); //boton del dialogo
+        ventana.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //todo codigo a ejecutar cuando se pulse el boton
+                //codigo a ejecutar cuando se pulse el boton
+                Toast.makeText(MainActivity.this, "Cancelar", Toast.LENGTH_SHORT).show();
+                dialog.cancel(); //cierra el dialogo
+            }
+        }); //boton del dialogo
+        ventana.setNeutralButton("Despues", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //todo codigo a ejecutar cuando se pulse el boton
+                //codigo a ejecutar cuando se pulse el boton
+                Toast.makeText(MainActivity.this, "Despues", Toast.LENGTH_SHORT).show();
                 dialog.cancel(); //cierra el dialogo
             }
         }); //boton del dialogo
