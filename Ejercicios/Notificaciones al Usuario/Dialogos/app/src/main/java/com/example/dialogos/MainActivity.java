@@ -3,6 +3,7 @@ package com.example.dialogos;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
@@ -10,14 +11,22 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final int DIALOGO_CONMENSAJE = 0;
+    private static final int DIALOGO_1_BTN = 1;
+    private static final int DIALOGO_2_BTN = 2;
+    private static final int DIALOGO_3_BTN = 3;
+
+    //Declaraciones para el segundo procedimiento
+    private AlertDialog.Builder ventana; //ventana de dialogo
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }   //end onCreate
 
-    public void onClickBtn (View v){
-        switch (v.getId()){
+    public void onClickBtn(View v) {
+        switch (v.getId()) {
             case R.id.btnMensaje:
                 dialogo_con_mensaje();
                 break;
@@ -34,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     }// end onClickBtn
 
     //metodo para crear un dialogo con un boton
-    private void dialogo_con_mensaje(){
+    private void dialogo_con_mensaje() {
         //crea un objeto de la clase AlertDialog.Builder "ventana de dialogo"
         AlertDialog.Builder ventana = new AlertDialog.Builder(this); //this es el contexto
         ventana.setTitle("Atencion"); //titulo del dialogo
@@ -128,4 +137,107 @@ public class MainActivity extends AppCompatActivity {
         }); //boton del dialogo
         ventana.show(); //muestra el dialogo
     }
+
+    @SuppressWarnings("deprecation")
+    public void onClickBtnBis(View view) {
+        switch (view.getId()) {
+            case R.id.btn4:
+                /*** solicita lo que muestre ***/
+                showDialog(DIALOGO_CONMENSAJE); //llama a onCreateDialog(0);
+                break;
+            case R.id.btn5:
+                showDialog(DIALOGO_1_BTN); //llama a onCreateDialog(1
+                break;
+            case R.id.btn6:
+                showDialog(DIALOGO_2_BTN); //llama a onCreateDialog(2);
+                break;
+            case R.id.btn7:
+                showDialog(DIALOGO_3_BTN); //llama a onCreateDialog(3
+                break;
+
+        }//end switch
+    }// end onClickBtnBis
+
+    //Sobreescritura del metodo onCreateDialog
+    @Override
+    protected Dialog onCreateDialog(int id) {
+        ventana = new AlertDialog.Builder(this);
+        switch (id) {
+            case DIALOGO_CONMENSAJE:
+                ventana.setTitle("Atencion"); //titulo del dialogo
+                ventana.setIcon(android.R.drawable.ic_dialog_alert); //icono del dialogo
+                ventana.setMessage("Este es un mensaje de aviso"); //mensaje del dialogo
+                //ventana.show(); //muestra el dialogo
+                break;
+            case DIALOGO_1_BTN:
+                ventana.setTitle("Atencion"); //titulo del dialogo
+                ventana.setIcon(android.R.drawable.ic_dialog_alert); //icono del dialogo
+                ventana.setMessage("Este es un mensaje de aviso"); //mensaje del dialogo
+                ventana.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //todo codigo a ejecutar cuando se pulse el boton
+                        //codigo a ejecutar cuando se pulse el boton
+                        dialog.cancel(); //cierra el dialogo
+                    }
+                }); //boton del dialogo
+                //ventana.show(); //muestra el dialogo
+                break;
+            case DIALOGO_2_BTN:
+                ventana.setTitle("Atencion"); //titulo del dialogo
+                ventana.setIcon(android.R.drawable.ic_dialog_alert); //icono del dialogo
+                ventana.setMessage("Este es un mensaje de aviso"); //mensaje del dialogo
+                ventana.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //todo codigo a ejecutar cuando se pulse el boton
+                        //codigo a ejecutar cuando se pulse el boton
+                        dialog.cancel(); //cierra el dialogo
+                    }
+                }); //boton del dialogo
+                ventana.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //todo codigo a ejecutar cuando se pulse el boton
+                        //codigo a ejecutar cuando se pulse el boton
+                        dialog.cancel(); //cierra el dialogo
+                    }
+                }); //boton del dialogo
+                //ventana.show(); //muestra el dialogo
+                break;
+            case DIALOGO_3_BTN:
+                ventana.setTitle("Atencion"); //titulo del dialogo
+                ventana.setIcon(android.R.drawable.ic_dialog_alert); //icono del dialogo
+                ventana.setMessage("Este es un mensaje de aviso"); //mensaje del dialogo
+                ventana.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //todo codigo a ejecutar cuando se pulse el boton
+                        //codigo a ejecutar cuando se pulse el boton
+                        dialog.cancel(); //cierra el dialogo
+                    }
+                }); //boton del dialogo
+                ventana.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //todo codigo a ejecutar cuando se pulse el boton
+                        //codigo a ejecutar cuando se pulse el boton
+                        dialog.cancel(); //cierra el dialogo
+                    }
+                }); //boton del dialogo
+                ventana.setNeutralButton("Despues", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //todo codigo a ejecutar cuando se pulse el boton
+                        //codigo a ejecutar cuando se pulse el boton
+                        dialog.cancel(); //cierra el dialogo
+                    }
+                }); //boton del dialogo
+                //ventana.show(); //muestra el dialogo
+                break;
+        }//end switch
+        return ventana.create();
+    }//end onCreateDialog
+
+
 }
