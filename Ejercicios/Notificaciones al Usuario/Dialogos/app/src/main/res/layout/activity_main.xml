@@ -92,6 +92,20 @@
             android:onClick="onClickBtnBis"
             android:text="Lista de seleccion" />
 
+        <Button
+            android:id="@+id/btnSingleChoice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClickBtnBis"
+            android:text="Lista de seleccion con Single Choice" />
+
+        <Button
+            android:id="@+id/btnMultiChoice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClickBtnBis"
+            android:text="Lista de seleccion con Multi Choice" />
+
 
 
 

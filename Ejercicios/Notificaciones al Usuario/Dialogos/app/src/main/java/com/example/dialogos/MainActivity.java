@@ -16,6 +16,9 @@ public class MainActivity extends AppCompatActivity {
     private static final int DIALOGO_2_BTN = 2;
     private static final int DIALOGO_3_BTN = 3;
     private static final int DIALOGO_LISTA_DE_SELECCION = 4;
+    private static final int DIALOGO_LISTA_DE_SELECCION_UNICA = 5;
+    private static final int DIALOGO_LISTA_DE_SELECCION_MULTIPLE = 6;
+
 
     //Declaraciones para el segundo procedimiento
     private AlertDialog.Builder ventana; //ventana de dialogo
@@ -153,10 +156,16 @@ public class MainActivity extends AppCompatActivity {
                 showDialog(DIALOGO_2_BTN); //llama a onCreateDialog(2);
                 break;
             case R.id.btn7:
-                showDialog(DIALOGO_3_BTN); //llama a onCreateDialog(3
+                showDialog(DIALOGO_3_BTN); //llama a onCreateDialog(3);
                 break;
             case R.id.btn8:
                 showDialog(DIALOGO_LISTA_DE_SELECCION); //llama a onCreateDialog(4);
+                break;
+            case R.id.btnSingleChoice:
+                showDialog(DIALOGO_LISTA_DE_SELECCION_UNICA); //llama a onCreateDialog(5);
+                break;
+            case R.id.btnMultiChoice:
+                showDialog(DIALOGO_LISTA_DE_SELECCION_MULTIPLE); //llama a onCreateDialog(6);
                 break;
 
         }//end switch
@@ -165,6 +174,7 @@ public class MainActivity extends AppCompatActivity {
     //Sobreescritura del metodo onCreateDialog
     @Override
     protected Dialog onCreateDialog(int id) {
+        String[] colores = getResources().getStringArray(R.array.colores);
         ventana = new AlertDialog.Builder(this);
         switch (id) {
             case DIALOGO_CONMENSAJE:
@@ -241,7 +251,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case DIALOGO_LISTA_DE_SELECCION:
-                String[] colores = getResources().getStringArray(R.array.colores);
                 ventana.setTitle("Lista de Valores"); //titulo del dialogo
                 ventana.setItems(colores, new DialogInterface.OnClickListener() {
                     @Override
@@ -249,7 +258,33 @@ public class MainActivity extends AppCompatActivity {
                         //todo codigo a ejecutar cuando se pulse el boton
                         //codigo a ejecutar cuando se pulse el boton
 
-                        Toast.makeText(MainActivity.this,"Opcion elegida " + colores[which], Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Opcion elegida " + colores[which], Toast.LENGTH_SHORT).show();
+                    }
+                }); //boton del dialogo
+                //ventana.show(); //muestra el dialogo
+                break;
+            case DIALOGO_LISTA_DE_SELECCION_UNICA:
+                ventana.setTitle("Lista de Valores seleccion unica"); //titulo del dialogo
+                ventana.setSingleChoiceItems(colores, 0, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //todo codigo a ejecutar cuando se pulse el boton
+                        //codigo a ejecutar cuando se pulse el boton
+
+                        Toast.makeText(MainActivity.this, "Opcion elegida " + colores[which], Toast.LENGTH_SHORT).show();
+                    }
+                }); //boton del dialogo
+                //ventana.show(); //muestra el dialogo
+                break;
+            case DIALOGO_LISTA_DE_SELECCION_MULTIPLE:
+                ventana.setTitle("Lista de Valores seleccion multiple"); //titulo del dialogo
+                ventana.setMultiChoiceItems(colores, null, new DialogInterface.OnMultiChoiceClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which, boolean isChecked) {
+                        //todo codigo a ejecutar cuando se pulse el boton
+                        //codigo a ejecutar cuando se pulse el boton
+
+                        Toast.makeText(MainActivity.this, "Opcion elegida " + colores[which], Toast.LENGTH_SHORT).show();
                     }
                 }); //boton del dialogo
                 //ventana.show(); //muestra el dialogo
