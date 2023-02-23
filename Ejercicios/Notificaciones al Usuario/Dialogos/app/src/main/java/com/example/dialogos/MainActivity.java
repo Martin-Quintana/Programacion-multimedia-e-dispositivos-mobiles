@@ -5,11 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+
 
     private static final int DIALOGO_CONMENSAJE = 0;
     private static final int DIALOGO_1_BTN = 1;
@@ -27,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }   //end onCreate
 
     public void onClickBtn(View v) {
@@ -265,17 +269,53 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case DIALOGO_LISTA_DE_SELECCION_UNICA:
                 ventana.setTitle("Lista de Valores seleccion unica"); //titulo del dialogo
+                //ventana de dialogo single choice con boton de ok
                 ventana.setSingleChoiceItems(colores, 0, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        View view = findViewById(R.id.view);
+                        //todo codigo a ejecutar cuando se pulse el boton
+                        //codigo a ejecutar cuando se pulse el boton
+                        switch (colores[which]) {
+                            case "Rojo":
+                                view.setBackgroundColor(Color.RED);
+                                break;
+                            case "Verde":
+                                view.setBackgroundColor(Color.GREEN);
+                                break;
+                            case "Azul":
+                                view.setBackgroundColor(Color.BLUE);
+                                break;
+                            case "Amarillo":
+                                view.setBackgroundColor(Color.YELLOW);
+
+                                break;
+                        }
+
+                        Toast.makeText(MainActivity.this, "Opcion elegida " + colores[which], Toast.LENGTH_SHORT).show();
+
+                    }
+
+                }); //boton del dialogo
+
+                //En el boton de ok no puedes poner las opciones de seleccion unica se hace en el setSingleChoiceItems
+                ventana.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         //todo codigo a ejecutar cuando se pulse el boton
                         //codigo a ejecutar cuando se pulse el boton
 
-                        Toast.makeText(MainActivity.this, "Opcion elegida " + colores[which], Toast.LENGTH_SHORT).show();
-                    }
-                }); //boton del dialogo
-                //ventana.show(); //muestra el dialogo
+                        dialog.cancel(); //cierra el dialogo
+                    } //boton del dialogo
+
+                    //MANTIENE EL ESTADO PARA SUCESIVAS VISUALIZACIONES DE LA V.DIALOGO
+                    //SI QUEREMOS "RESETEAR" DICHOS ESTADOS, HAY QUE LLAMAR AL METODO
+
+
+                    //ventana.show(); //muestra el dialogo
+                });
                 break;
+
             case DIALOGO_LISTA_DE_SELECCION_MULTIPLE:
                 ventana.setTitle("Lista de Valores seleccion multiple"); //titulo del dialogo
                 ventana.setMultiChoiceItems(colores, null, new DialogInterface.OnMultiChoiceClickListener() {
@@ -286,7 +326,18 @@ public class MainActivity extends AppCompatActivity {
 
                         Toast.makeText(MainActivity.this, "Opcion elegida " + colores[which], Toast.LENGTH_SHORT).show();
                     }
+
                 }); //boton del dialogo
+                ventana.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //todo codigo a ejecutar cuando se pulse el boton
+                        //codigo a ejecutar cuando se pulse el boton
+                        dialog.cancel(); //cierra el dialogo
+                    }
+                }); //boton del dialogo
+
+                removeDialog(DIALOGO_LISTA_DE_SELECCION_MULTIPLE);
                 //ventana.show(); //muestra el dialogo
                 break;
         }//end switch
