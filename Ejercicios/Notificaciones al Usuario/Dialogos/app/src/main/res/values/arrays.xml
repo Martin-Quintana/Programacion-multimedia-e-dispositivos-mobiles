@@ -6,4 +6,11 @@
         <item>Verde</item>
         <item>Azul</item>
     </string-array>
+
+    <integer-array name="colores_int">
+        <item>@color/rojo</item>
+        <item>@color/amarillo</item>
+        <item>@color/verde</item>
+        <item>@color/azul</item>
+    </integer-array>
 </resources>

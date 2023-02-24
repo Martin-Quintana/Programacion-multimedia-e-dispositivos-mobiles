@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     private static final int DIALOGO_LISTA_DE_SELECCION_UNICA = 5;
     private static final int DIALOGO_LISTA_DE_SELECCION_MULTIPLE = 6;
 
+    private int posicionColor;
+    private View viewColor;
 
     //Declaraciones para el segundo procedimiento
     private AlertDialog.Builder ventana; //ventana de dialogo
@@ -30,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        viewColor = findViewById(R.id.view);
 
     }   //end onCreate
 
@@ -276,23 +279,8 @@ public class MainActivity extends AppCompatActivity {
                         View view = findViewById(R.id.view);
                         //todo codigo a ejecutar cuando se pulse el boton
                         //codigo a ejecutar cuando se pulse el boton
-                        switch (colores[which]) {
-                            case "Rojo":
-                                view.setBackgroundColor(Color.RED);
-                                break;
-                            case "Verde":
-                                view.setBackgroundColor(Color.GREEN);
-                                break;
-                            case "Azul":
-                                view.setBackgroundColor(Color.BLUE);
-                                break;
-                            case "Amarillo":
-                                view.setBackgroundColor(Color.YELLOW);
-
-                                break;
-                        }
-
-                        Toast.makeText(MainActivity.this, "Opcion elegida " + colores[which], Toast.LENGTH_SHORT).show();
+                        //guarda la posicion del color dentro del array colores en la variable posicionColor
+                        posicionColor = which;
 
                     }
 
@@ -304,7 +292,9 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         //todo codigo a ejecutar cuando se pulse el boton
                         //codigo a ejecutar cuando se pulse el boton
-
+                        //cambia el color de la view
+                        viewColor.setBackgroundColor(getResources().getIntArray(R.array.colores_int)[posicionColor]);
+                        removeDialog(DIALOGO_LISTA_DE_SELECCION_UNICA);
                         dialog.cancel(); //cierra el dialogo
                     } //boton del dialogo
 
@@ -343,6 +333,24 @@ public class MainActivity extends AppCompatActivity {
         }//end switch
         return ventana.create(); //devuelve el dialogo
     }//end onCreateDialog
+
+
+    //MANTIENE EL ESTADO PARA SUCESIVAS VISUALIZACIONES DE LA V.DIALOGO
+    //Giro de pantalla guardando el estado
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("posicionColor", posicionColor);
+    }
+
+    //Giro de pantalla recuperando el estado
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        posicionColor = savedInstanceState.getInt("posicionColor");
+        viewColor.setBackgroundColor(getResources().getIntArray(R.array.colores_int)[posicionColor]);
+    }
+
 
 
 }
