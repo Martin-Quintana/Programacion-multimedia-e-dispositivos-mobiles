@@ -19,13 +19,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickBtnLanzarNotificacion(View view) {
-        //1. Creal la notificacion
+        //1. Crea la notificacion
         Notification.Builder nb = new Notification.Builder(this);
         //2. Personalizar
         nb.setSmallIcon(android.R.drawable.star_on);
         nb.setTicker("Atención");
         nb.setContentTitle("Aviso de llamada");
-        nb.setContentText("Esto es el mensaje que queremos transmitir");
+        //nb.setContentText("Esto es el mensaje que queremos transmitir"); Texto de una sola linea
+        nb.setStyle(new Notification.BigTextStyle().bigText("Esto es el mensaje que queremos transmitir" +
+                                                            "\n Fernando Alonso le ha llamado" +
+                                                            "\n Le ha dicho que es muy guapo" +
+                                                            "\n Vamos a por la 33")); //Texto de varias lineas
         //Transformar el icono drawable en un bitmap
         Bitmap largeIcon = BitmapFactory.decodeResource(getResources(), android.R.drawable.sym_call_incoming);
         nb.setLargeIcon(largeIcon);
@@ -34,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
         //4. Asociar la accion a la notificacion
         nb.setContentIntent(pendingIntent);
+        // autoCancel: true -> la notificacion se cancela al pulsar sobre ella
+        nb.setAutoCancel(true);
         //5. Lanzar el NotificationManager
         Notification notification = nb.build();
         android.app.NotificationManager nm = (android.app.NotificationManager) getSystemService(NOTIFICATION_SERVICE);
