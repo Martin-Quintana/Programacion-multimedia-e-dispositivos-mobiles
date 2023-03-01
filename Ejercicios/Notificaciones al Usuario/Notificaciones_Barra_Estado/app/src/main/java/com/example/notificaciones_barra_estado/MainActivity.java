@@ -32,6 +32,12 @@ public class MainActivity extends AppCompatActivity {
         //3. Preparar la accion asociada a la notificacion
         Intent intent = new Intent(this, SecondActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
-        //4. Lanzar el NotificationManager
+        //4. Asociar la accion a la notificacion
+        nb.setContentIntent(pendingIntent);
+        //5. Lanzar el NotificationManager
+        Notification notification = nb.build();
+        android.app.NotificationManager nm = (android.app.NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        nm.notify(1, notification);
+
     }
 }
