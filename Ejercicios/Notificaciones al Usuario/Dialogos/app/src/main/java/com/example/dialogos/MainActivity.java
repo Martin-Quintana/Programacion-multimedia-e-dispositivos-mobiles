@@ -313,8 +313,14 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which, boolean isChecked) {
                         //todo codigo a ejecutar cuando se pulse el boton
                         //codigo a ejecutar cuando se pulse el boton
+                        if (isChecked) {
+                            //guarda la posicion del color dentro del array colores en la variable posicionColor
+                            posicionColor = which;
 
-                        Toast.makeText(MainActivity.this, "Opcion elegida " + colores[which], Toast.LENGTH_SHORT).show();
+
+                        }
+
+
                     }
 
                 }); //boton del dialogo
@@ -323,6 +329,19 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         //todo codigo a ejecutar cuando se pulse el boton
                         //codigo a ejecutar cuando se pulse el boton
+                        //Una Toast para mostrar cada color seleccionado
+                        for (int i = 0; i < colores.length; i++) {
+                            if (posicionColor == 0) {
+                                Toast.makeText(MainActivity.this, "Opcion elegida " + colores[0], Toast.LENGTH_SHORT).show();
+                            } else if (posicionColor == 1) {
+                                Toast.makeText(MainActivity.this, "Opcion elegida " + colores[1], Toast.LENGTH_SHORT).show();
+                            } else if (posicionColor == 2) {
+                                Toast.makeText(MainActivity.this, "Opcion elegida " + colores[2], Toast.LENGTH_SHORT).show();
+                            } else if (posicionColor == 3) {
+                                Toast.makeText(MainActivity.this, "Opcion elegida " + colores[3], Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
                         dialog.cancel(); //cierra el dialogo
                     }
                 }); //boton del dialogo
