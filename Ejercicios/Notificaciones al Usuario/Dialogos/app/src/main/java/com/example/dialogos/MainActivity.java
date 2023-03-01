@@ -13,7 +13,6 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
 
-
     private static final int DIALOGO_CONMENSAJE = 0;
     private static final int DIALOGO_1_BTN = 1;
     private static final int DIALOGO_2_BTN = 2;
@@ -369,7 +368,6 @@ public class MainActivity extends AppCompatActivity {
         posicionColor = savedInstanceState.getInt("posicionColor");
         viewColor.setBackgroundColor(getResources().getIntArray(R.array.colores_int)[posicionColor]);
     }
-
 
 
 }
