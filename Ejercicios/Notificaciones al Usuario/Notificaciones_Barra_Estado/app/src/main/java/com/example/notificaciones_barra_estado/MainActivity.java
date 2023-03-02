@@ -23,13 +23,14 @@ public class MainActivity extends AppCompatActivity {
         Notification.Builder nb = new Notification.Builder(this);
         //2. Personalizar
         nb.setSmallIcon(android.R.drawable.star_on);
-        nb.setTicker("Atención");
+        //nb.setTicker("Atención"); es mejor quitarlo
         nb.setContentTitle("Aviso de llamada");
         //nb.setContentText("Esto es el mensaje que queremos transmitir"); Texto de una sola linea
         nb.setStyle(new Notification.BigTextStyle().bigText("Esto es el mensaje que queremos transmitir" +
                                                             "\n Fernando Alonso le ha llamado" +
                                                             "\n Le ha dicho que es muy guapo" +
                                                             "\n Vamos a por la 33")); //Texto de varias lineas
+
         //Transformar el icono drawable en un bitmap
         Bitmap largeIcon = BitmapFactory.decodeResource(getResources(), android.R.drawable.sym_call_incoming);
         nb.setLargeIcon(largeIcon);
