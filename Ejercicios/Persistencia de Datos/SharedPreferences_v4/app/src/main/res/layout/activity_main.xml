@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btnPreferencias"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Elegir preferencias"
+        android:onClick="onClickBtn"/>
+
+    <Button
+        android:id="@+id/btnObtenerPreferencias"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ver preferencias elegidas"
+        android:onClick="onClickBtn"/>
+
+    <Button
+        android:id="@+id/btnResetPreferencias"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reset"
+        android:onClick="onClickBtn"/>
+
+    <TextView
+        android:id="@+id/txtSelecciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/red" />
+</LinearLayout>

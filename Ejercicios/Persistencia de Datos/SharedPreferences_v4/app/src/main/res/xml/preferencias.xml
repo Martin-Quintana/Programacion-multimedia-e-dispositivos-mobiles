@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- ordeno las opciones por categorías -->
+    <PreferenceCategory
+        android:title="Categoría 1">
+
+        <CheckBoxPreference
+            android:key="opcion1"
+            android:title="Preferencia 1"
+            android:summary="Descripción de la preferencia 1"
+            android:defaultValue="false"/>
+
+        <EditTextPreference
+            android:key="opcion2"
+            android:title="Preferencia 2"
+            android:summary="Descripción de la preferencia 2"
+            android:dialogTitle="Nombre" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Categoría 2">
+
+        <ListPreference
+            android:key="opcion3"
+            android:title="Preferencia 3"
+            android:summary="Descripción de la preferencia 3"
+            android:dialogTitle="Color"
+            android:entries="@array/colores"
+            android:entryValues="@array/codigocolores" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Categoría 3">
+
+        <SwitchPreference
+            android:key="opcion4"
+            android:title="Preferencia 4"
+            android:summary="Descripción de la preferencia 4"
+            android:defaultValue="false"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Categoría 4">
+        <!-- RingtonePreference: inicia la lista de tonos de llamada
+        de los dispositivos en la que el usuario puede seleccionar el sonido preferido-->
+        <RingtonePreference
+            android:key="opcion5_ringtone"
+            android:showDefault="true"
+            android:showSilent="true"
+            android:summary="Selecciona tono favorito"
+            android:title="Ringtone Preference" />
+
+        <SeekBarPreference
+            android:key="opcion6_seekbar"
+            android:title="Preferencia 6"
+            android:summary="Selecciona volumen"
+            android:min="0"
+            android:max="10"
+            android:defaultValue="5"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>
