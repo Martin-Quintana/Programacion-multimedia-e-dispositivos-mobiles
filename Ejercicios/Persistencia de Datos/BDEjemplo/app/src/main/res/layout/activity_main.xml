@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <Button
+        android:id="@+id/btnInsertarSQL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Insertar con SQL"
+        android:onClick="onClickBtn"/>
+    <Button
+        android:id="@+id/btnInsertarParametrizado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Insertar con insert()"
+        android:onClick="onClickBtn"/>
+    <Button
+        android:id="@+id/btnEliminarSQL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eliminar con SQL"
+        android:onClick="onClickBtn"/>
+    <Button
+        android:id="@+id/btnEliminarParametrizado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eliminar con delete()"
+        android:onClick="onClickBtn"/>
+    <Button
+        android:id="@+id/btnModificarSQL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Modificar con SQL"
+        android:onClick="onClickBtn"/>
+    <Button
+        android:id="@+id/btnModificarParametrizado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Modificar con update()"
+        android:onClick="onClickBtn"/>
+    <Button
+        android:id="@+id/btnMostrar1SQL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mostrar 1(por clave) con SQL"
+        android:onClick="onClickBtn"/>
+    <Button
+        android:id="@+id/btnMostrar1Parametrizado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mostrar 1(por clave) con query()"
+        android:onClick="onClickBtn"/>
+    <Button
+        android:id="@+id/btnMostrarNSQL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mostrar N con SQL"
+        android:onClick="onClickBtn"/>
+    <Button
+        android:id="@+id/btnMostrarNParametrizado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mostrar N con query()"
+        android:onClick="onClickBtn"/>
+    <TextView
+        android:id="@+id/txtMensaje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mensaje"/>
+
+</LinearLayout>
