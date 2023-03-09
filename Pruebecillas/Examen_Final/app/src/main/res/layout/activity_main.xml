@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/layoutBienvenida"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/teal_200"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible"> <!-- @color/azulClaro -->
+
+        <!--        Hacemos una TextView-->
+        <TextView
+            android:id="@+id/textoBienvenida"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/design_default_color_background"
+            android:textSize="@dimen/letraBienvenida" />
+        <!--        Hacemos una ImageView-->
+        <ImageView
+            android:id="@+id/imagenPrincipal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/flaskgrande" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutEjecucion"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/teal_200"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"> <!-- @color/azulClaro -->
+
+        <!--        Hacemos la text view-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/elige_un_compuesto"
+            android:textSize="@dimen/margen" />
+
+        <ListView
+            android:id="@+id/listaCompuestos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margen"
+            android:layout_marginRight="@dimen/margen" />
+    </LinearLayout>
+
+
+</LinearLayout>
